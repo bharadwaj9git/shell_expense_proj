@@ -1,12 +1,13 @@
+source common.sh
 
-echo -e "\e[33m installing mysql server \e[0m"
+heading installing mysql server
 dnf install mysql-server -y
 
-echo -e "\e[33m enabling service \e[0m"
+heading enabling service
 systemctl enable mysqld
 
-echo -e "\e[33m start service \e[0m"
+heading start service
 systemctl start mysqld
 
-echo -e "\e[33m setting credentials \e[0m"
+heading setting credentials
 mysql_secure_installation --set-root-pass $1

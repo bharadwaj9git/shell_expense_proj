@@ -1,8 +1,6 @@
 #front end automating
 
-heading(){
-  echo -e "\e[33m$*\e[0m"
-}
+source common.sh
 
 heading installing nginx
 dnf install nginx -y &>> /tmp/expense.log
