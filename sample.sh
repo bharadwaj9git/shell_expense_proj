@@ -84,10 +84,10 @@ echo function value - $y
 
 # function have its own inputs
 
-input_value(){
+inputs_fn(){
   echo first value - $1
   echo second value - $2
   echo no of args - $#
 }
 
-input_value 123 456
+input_fn 123 456
