@@ -21,7 +21,8 @@ unzip /tmp/frontend.zip
 echo -e "\e[33m restarting service \e[0m"
 systemctl restart nginx
 
-echo -e "\e[33m enabling service \e[0m
+echo -e "\e[33m enabling service \e[0m"
 systemctl enable nginx
+
 
 
