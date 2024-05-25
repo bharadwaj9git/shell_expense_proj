@@ -24,7 +24,18 @@ echo first arguments - $1
 echo all arguments - $*
 echo no.of arguments - $#
 
-# command substitution  var = $
+# command substitution  var = $(command)  if we use (()) for arithmetic substitution
+# command
+lsc = $(ls)
+
+echo $lsc
+
+#arithematic
+
+var= $((10+50))
+echo $var
+
+
 
 # $? it will give exit status
 # $# for no of arguments
