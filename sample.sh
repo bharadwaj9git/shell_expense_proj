@@ -14,11 +14,21 @@ x=10
 echo x value is $x
 echo x value is ${x}
 
-#system variables
+#system special variables
+# if we want to give input from system then special variables comes
 # $0 $1 $2 .....$n
 # $#,$*,$?
 
+echo $0
+echo $1
+echo $*
+echo $#
+
+# command substitution  var = $
+
 # $? it will give exit status
+# $# for no of arguments
+# $* for all values
 
 ls
 echo exit status - $?
