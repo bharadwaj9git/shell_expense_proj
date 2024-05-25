@@ -26,13 +26,13 @@ echo no.of arguments - $#
 
 # command substitution  var = $(command)  if we use (()) for arithmetic substitution
 # command
-lsc = $(ls)
+LS=$(ls)
 
-echo $lsc
+echo $LS
 
 #arithematic
 
-var= $((10+50))
+var=$((10+50))
 echo $var
 
 
