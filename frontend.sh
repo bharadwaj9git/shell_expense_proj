@@ -1,6 +1,10 @@
 #front end automating
 
-echo -e "\e[33m installing nginx\e[0m"
+heading(){
+  echo -e "\e[33m$*\e[0m"
+}
+
+heading installing nginx
 dnf install nginx -y &>> /tmp/expense.log
 echo exit status - $?
 
