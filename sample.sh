@@ -21,3 +21,6 @@ echo x value is ${x}
 
 ls
 echo exit state - $?
+
+# exit state 0 -success
+# 1-255 failure
