@@ -10,6 +10,6 @@ echo -e "\e[36m hello world \e[0m"
 # variable declaration and accessing variable
 
 x=10
-
-echo x is $x
+echo x value is $x
+echo x value is ${x}
 
