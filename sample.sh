@@ -19,10 +19,10 @@ echo x value is ${x}
 # $0 $1 $2 .....$n
 # $#,$*,$?
 
-echo $0
-echo $1
-echo $*
-echo $#
+echo script name - $0
+echo first arguemnt - $1
+echo all arguments - $*
+echo no.of arguments $#
 
 # command substitution  var = $
 
