@@ -35,8 +35,6 @@ echo $LS
 var=$((10+50))
 echo $var
 
-
-
 # $? it will give exit status
 # $# for no of arguments
 # $* for all values
@@ -62,3 +60,8 @@ cat opt
 # >> will append content, so we use &>>   ex: dnf install nginx -y &>> /tmp/expense.log will use in our porject
 
 
+# functions
+print_hello()
+{
+  echo hello world
+}
