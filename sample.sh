@@ -20,7 +20,6 @@ echo x value is ${x}
 # $? it will give exit status
 
 ls
-echo exit state - $?
-
+echo exit status - $?
 # exit state 0 -success
 # 1-255 failure
