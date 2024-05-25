@@ -9,7 +9,9 @@ curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-back
 cd /app
 unzip /tmp/backend.zip
 npm install
+dnf install mysql -y
+mysql -h 34.235.121.204 -uroot -pExpenseApp@1 < /app/schema/backend.sql
 systemctl daemon-reload
 systemctl enable backend
 systemctl start backend
-dnf install mysql -y
+
