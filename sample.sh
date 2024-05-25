@@ -20,7 +20,7 @@ echo x value is ${x}
 # $#,$*,$?
 
 echo script name - $0
-echo first arguemnt - $1
+echo first arguments - $1
 echo all arguments - $*
 echo no.of arguments - $#
 
