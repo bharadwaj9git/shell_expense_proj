@@ -68,3 +68,13 @@ print_hello()
 }
 # calling function
 print_hello
+
+# functions can access main program variables and vice versa
+
+print_hello()
+{
+  echo hello world
+  echo accessing variable from main program $x
+}
+
+print_hello
