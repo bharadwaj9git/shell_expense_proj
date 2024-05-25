@@ -13,6 +13,7 @@ echo -e "\e[33m downloading our own content \e[0m"
 curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
 
 echo -e "\e[33m change path to nginx html \e[0m"
+# shellcheck disable=SC2164
 cd /usr/share/nginx/html
 
 echo -e "\e[33m unzip content \e[0m"
