@@ -9,19 +9,19 @@ echo -e "\e[33m installing node \e[0m"
 dnf install nodejs -y
 
 echo -e "\e[33m user add \e[0m"
-useradd shell_prj
+useradd shell_pr
 
 echo -e "\e[33m copying service file \e[0m"
 cp backend.service /etc/systemd/system/backend.service
 
 echo -e "\e[33m user add \e[0m"
-mkdir /apps
+mkdir /appl
 
 echo -e "\e[33m downloading our own content \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
 
 echo -e "\e[33m change directory \e[0m"
-cd /apps
+cd /appl
 
 echo -e "\e[33m unzip content \e[0m"
 unzip /tmp/backend.zip
