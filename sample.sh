@@ -90,4 +90,4 @@ input_value(){
   echo no of args - $#
 }
 
-input_values 123 456
+input_value 123 456
