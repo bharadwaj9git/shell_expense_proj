@@ -14,7 +14,7 @@ useradd shell_pr
 echo -e "\e[33m copying service file \e[0m"
 cp backend.service /etc/systemd/system/backend.service
 
-echo -e "\e[33m user add \e[0m"
+echo -e "\e[33m creating directory \e[0m"
 mkdir /appl
 
 echo -e "\e[33m downloading our own content \e[0m"
