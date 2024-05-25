@@ -61,7 +61,10 @@ cat opt
 
 
 # functions
+#declaring function
 print_hello()
 {
   echo hello world
 }
+# calling function
+print_hello
