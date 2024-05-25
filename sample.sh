@@ -81,3 +81,13 @@ print_hello()
 
 print_hello
 echo function value - $y
+
+# function have its own inputs
+
+input_value(){
+  echo first value - $1
+  echo second value - $2
+  echo no of args - $#
+}
+
+input_values 123 456
