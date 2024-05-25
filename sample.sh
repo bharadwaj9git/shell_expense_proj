@@ -21,7 +21,7 @@ echo x value is ${x}
 
 echo script name - $0
 echo first arguments - $1
-echo all arguments - $*
+echo all arguments - "$*"
 echo no.of arguments - $#
 
 # command substitution  var = $(command)  if we use (()) for arithmetic substitution
@@ -66,7 +66,7 @@ print_hello()
 {
   echo hello world
 }
-# calling function
+# to call function we just simply
 
 print_hello
 
@@ -90,4 +90,4 @@ inputs_fn(){
   echo no of args - $#
 }
 
-input_fn 123 456
+inputs_fn 123 456
