@@ -28,9 +28,13 @@ status $?
 
 heading copying service file
 cp backend.service /etc/systemd/system/backend.service &>> /tmp/expense.log
+status
+
+heading removing old directory
+rm -rf /app &>> /tmp/expense.log
 status $?
 
-heading creating directory
+heading creating new directory
 mkdir /app &>> /tmp/expense.log
 status $?
 
@@ -40,7 +44,7 @@ status $?
 
 heading change directory
 # shellcheck disable=SC2164
-cd /ap &>> /tmp/expense.log
+cd /app &>> /tmp/expense.log
 status $?
 
 heading unzip content
