@@ -129,3 +129,11 @@ sample()
 
 sample
 echo return status - $?
+
+# loops  while , for
+
+i=10
+while [ $i -gt 0 ]; do
+  echo hello
+  i = $(($i-1))
+  done
