@@ -4,7 +4,13 @@ source common.sh
 
 heading installing nginx
 dnf install nginx -y &>> /tmp/expense.log
-echo exit status - $?
+#echo exit status - $?
+if [ $? -eq 0 ]; then
+echo success
+else
+echo failure
+exit 2
+fi
 
 heading config file copy
 cp frontend.conf /etc/nginx/default.d/frontend.conf &>> /tmp/expense.log
