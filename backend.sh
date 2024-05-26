@@ -1,6 +1,11 @@
 source common.sh
 rm -rf /tmp/expense.log
 
+if [ -z "$1" ]; then
+echo "input password missing"
+exit 1
+fi
+
 
 heading disabling old version
 dnf module disable nodejs -y &>> /tmp/expense.log
@@ -15,7 +20,7 @@ dnf install nodejs -y &>> /tmp/expense.log
 status $?
 
 heading adding user
-id expense
+id expense &>> /tmp/expense.log
 if [ $? -ne 0 ]; then
 useradd expense &>> /tmp/expense.log
 fi
@@ -49,7 +54,7 @@ status $?
 
 heading setting pwd
 
-mysql -h 34.204.77.225 -uroot -pExpenseApp@1 < /app/schema/backend.sql &>> /tmp/expense.log
+mysql -h 34.204.77.225 -uroot $1 < /app/schema/backend.sql &>> /tmp/expense.log
 status $?
 
 hading reloading,enabling and start service
