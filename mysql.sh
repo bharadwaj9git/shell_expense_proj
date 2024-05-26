@@ -6,14 +6,6 @@ echo "input password missing"
 exit 1
 fi
 
-status(){
-  if [ $1 -eq 0 ]; then
-  echo success
-  else
-  echo failure
-  exit 2
-  fi
-}
 
 heading installing mysql server
 dnf install mysql-server -y &>> /tmp/expense.log
@@ -21,30 +13,19 @@ status $?
 
 heading enabling service
 systemctl enable mysqld &>> /tmp/expense.log
-if [ $? -eq 0 ]; then
+status $?
+:'if [ $? -eq 0 ]; then
 echo success
 else
 echo failure
 exit 2
-fi
+fi'
 
 
 heading start service
 systemctl start mysqld &>> /tmp/expense.log
-if [ $? -eq 0 ]; then
-echo success
-else
-echo failure
-exit 2
-fi
-
+status $?
 
 heading setting credentials
 mysql_secure_installation --set-root-pass $1 &>> /tmp/expense.log
-if [ $? -eq 0 ]; then
-echo success
-else
-echo failure
-exit 2
-fi
-
+status $?
