@@ -57,8 +57,7 @@ dnf install mysql -y  &>> /tmp/expense.log
 status $?
 
 heading setting pwd
-
-mysql -h 34.204.77.225 -uroot $1 < /app/schema/backend.sql &>> /tmp/expense.log
+mysql -h 34.204.77.225 -uroot -pExpenseApp@1 < /app/schema/backend.sql  &>> /tmp/expense.log
 status $?
 
 hading reloading,enabling and start service
