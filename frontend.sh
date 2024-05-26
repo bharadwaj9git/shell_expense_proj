@@ -6,12 +6,7 @@ rm -rf /tmp/expense.log
 heading installing nginx
 dnf install nginx -y &>> /tmp/expense.log
 #echo exit status - $?
-:'if [ $? -eq 0 ]; then
-echo success
-else
-echo failure
-exit 2
-fi'
+
 status $?
 
 heading config file copy
