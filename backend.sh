@@ -4,54 +4,54 @@ rm -rf /tmp/expense.log
 
 heading disabling old version
 dnf module disable nodejs -y &>> /tmp/expense.log
-status #?
+status $?
 
 heading enabling new version
 dnf module enable nodejs:20 -y &>> /tmp/expense.log
-status #?
+status $?
 
 heading installing node
 dnf install nodejs -y &>> /tmp/expense.log
-status #?
+status $?
 
 heading user add
 useradd shell-pr &>> /tmp/expense.log
-status #?
+status $?
 
 heading copying service file
 cp backend.service /etc/systemd/system/backend.service &>> /tmp/expense.log
-status #?
+status $?
 
 heading creating directory
 mkdir /ap
-status #?
+status $?
 
 heading downloading our own content
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip &>> /tmp/expense.log
-status #?
+status $?
 
 heading change directory
 # shellcheck disable=SC2164
 cd /ap &>> /tmp/expense.log
-status #?
+status $?
 
 heading unzip content
 unzip /tmp/backend.zip &>> /tmp/expense.log
-status #?
+status $?
 
 heading installing mysql heading
 npm install
 dnf install mysql - &>> /tmp/expense.log
-status #?
+status $?
 
 heading setting pwd
 
 mysql -h 34.204.77.225 -uroot -pExpenseApp@1 < /app/schema/backend.sql &>> /tmp/expense.log
-status #?
+status $?
 
 hading reloading,enabling and start service
 systemctl daemon-reload &>> /tmp/expense.log
 systemctl enable backend &>> /tmp/expense.log
 systemctl start backend &>> /tmp/expense.log
-status #?
+status $?
 
