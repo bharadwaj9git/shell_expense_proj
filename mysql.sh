@@ -14,7 +14,8 @@ status $?
 heading enabling service
 systemctl enable mysqld &>> /tmp/expense.log
 status $?
-:'if [ $? -eq 0 ]; then
+:'
+if [ $? -eq 0 ]; then
 echo success
 else
 echo failure
