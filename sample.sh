@@ -119,3 +119,13 @@ else echo fail
 fi
 
 # always prefer to use "" for variables in conditions
+#"like exit in conditions, in functions we will user return in functions as well"
+
+sample()
+{
+  echo hello
+  return 10
+}
+
+sample
+echo return status - $?
