@@ -1,5 +1,10 @@
 source common.sh
 
+if [ -z "$1" ]; then
+echo "input password missing"
+exit
+fi
+
 heading installing mysql server
 dnf install mysql-server -y
 

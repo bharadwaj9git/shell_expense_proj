@@ -101,6 +101,7 @@ inputs_fn 123 456
 
 # every thing expression will categorise numbers -- -eq(equal),-ne(notequal),-lt(lessthan),-gt(graterthan),-le(lessthan or equals)
 # ,-ge (graterthan or equql to) if string ==,!=,-z
+# -z for variables check
 # if file expression -e [-e /opt/sai.sh] to check file exists or not
 #man.bash.com to check more commands
 
@@ -116,3 +117,5 @@ elif [ $marks -lt 70 ]; then
 echo $marks secondclass
 else echo fail
 fi
+
+# always prefer to use "" for variables in conditions
