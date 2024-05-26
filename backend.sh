@@ -17,7 +17,7 @@ status $?
 heading adding user
 id expense
 if [ $? -ne 0 ]; then
-useradd expnese &>> /tmp/expense.log
+useradd expense &>> /tmp/expense.log
 fi
 status $?
 
