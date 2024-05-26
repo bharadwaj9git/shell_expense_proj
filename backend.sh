@@ -31,7 +31,7 @@ cp backend.service /etc/systemd/system/backend.service &>> /tmp/expense.log
 status $?
 
 heading creating directory
-mkdir /ap
+mkdir /app &>> /tmp/expense.log
 status $?
 
 heading downloading our own content
