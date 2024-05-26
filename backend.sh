@@ -28,7 +28,7 @@ status $?
 
 heading copying service file
 cp backend.service /etc/systemd/system/backend.service &>> /tmp/expense.log
-status
+status $?
 
 heading removing old directory
 rm -rf /app &>> /tmp/expense.log
