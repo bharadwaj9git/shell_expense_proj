@@ -91,3 +91,28 @@ inputs_fn(){
 }
 
 inputs_fn 123 456
+
+# conditions
+# if condition
+
+#simple if: if [expression]; then commands fi
+#if else:  if [expression]; then commands else command fi
+#else if: if [exp1] then commands else if[exp2] then commands else commands fi
+
+# every thing expression will categorise numbers -- -eq(equal),-ne(notequal),-lt(lessthan),-gt(graterthan),-le(lessthan or equals)
+# ,-ge (graterthan or equql to) if string ==,!=,-z
+# if file expression -e [-e /opt/sai.sh] to check file exists or not
+#man.bash.com to check more commands
+
+a=10
+if [ $a -gt 5 ]; then
+echo $a graterthan 5
+fi
+
+marks=60
+if [ $marks -gt 70 ]; then
+echo $a firstclass
+elif [ $marks -lt 70 ]; then
+echo $marks secondclass
+else echo fail
+fi
