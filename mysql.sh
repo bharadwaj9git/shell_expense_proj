@@ -2,7 +2,7 @@ source common.sh
 
 if [ -z "$1" ]; then
 echo "input password missing"
-exit 2
+exit 1
 fi
 
 heading installing mysql server
