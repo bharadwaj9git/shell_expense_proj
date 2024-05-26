@@ -60,7 +60,7 @@ heading setting pwd
 mysql -h 34.204.77.225 -uroot -pExpenseApp@1 < /app/schema/backend.sql  &>> /tmp/expense.log
 status $?
 
-hading reloading,enabling and start service
+heading reloading,enabling and start service
 systemctl daemon-reload &>> /tmp/expense.log
 systemctl enable backend &>> /tmp/expense.log
 systemctl start backend &>> /tmp/expense.log
