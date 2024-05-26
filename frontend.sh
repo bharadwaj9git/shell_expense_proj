@@ -1,6 +1,7 @@
 #front end automating
 
 source common.sh
+rm -rf /tmp/expense.log
 
 heading installing nginx
 dnf install nginx -y &>> /tmp/expense.log
