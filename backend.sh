@@ -1,42 +1,57 @@
+source common.sh
+rm -rf /tmp/expense.log
 
-echo -e "\e[33m disabling old version \e[0m"
-dnf module disable nodejs -y
 
-echo -e "\e[33m enabling new version \e[0m"
-dnf module enable nodejs:20 -y
+heading disabling old version
+dnf module disable nodejs -y &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m installing node \e[0m"
-dnf install nodejs -y
+heading enabling new version
+dnf module enable nodejs:20 -y &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m user add \e[0m"
-useradd shell-pr
+heading installing node
+dnf install nodejs -y &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m copying service file \e[0m"
-cp backend.service /etc/systemd/system/backend.service
+heading user add
+useradd shell-pr &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m creating directory \e[0m"
+heading copying service file
+cp backend.service /etc/systemd/system/backend.service &>> /tmp/expense.log
+stat #?
+
+heading creating directory
 mkdir /ap
+stat #?
 
-echo -e "\e[33m downloading our own content \e[0m"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+heading downloading our own content
+curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m change directory \e[0m"
+heading change directory
 # shellcheck disable=SC2164
-cd /ap
+cd /ap &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m unzip content \e[0m"
-unzip /tmp/backend.zip
+heading unzip content
+unzip /tmp/backend.zip &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m installing mysql \e[0m"
+heading installing mysql heading
 npm install
-dnf install mysql -y
+dnf install mysql - &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m setting pwd \e[0m"
+heading setting pwd
 
-mysql -h 34.204.77.225 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h 34.204.77.225 -uroot -pExpenseApp@1 < /app/schema/backend.sql &>> /tmp/expense.log
+stat #?
 
-echo -e "\e[33m reloading,enabling and start service \e[0m"
-systemctl daemon-reload
-systemctl enable backend
-systemctl start backend
+hading reloading,enabling and start service
+systemctl daemon-reload &>> /tmp/expense.log
+systemctl enable backend &>> /tmp/expense.log
+systemctl start backend &>> /tmp/expense.log
+stat #?
 
