@@ -101,7 +101,7 @@ inputs_fn 123 456
 
 # every thing expression will categorise numbers -- -eq(equal),-ne(notequal),-lt(lessthan),-gt(graterthan),-le(lessthan or equals)
 # ,-ge (graterthan or equql to) if string ==,!=,-z
-# -z for variables check
+# -z for variables check if [ -z "$1/" ]; then echo no variable fi
 # if file expression -e [-e /opt/sai.sh] to check file exists or not
 #man.bash.com to check more commands
 
