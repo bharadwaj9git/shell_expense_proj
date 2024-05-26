@@ -14,8 +14,11 @@ heading installing node
 dnf install nodejs -y &>> /tmp/expense.log
 status $?
 
-heading user add
-useradd shell-pr &>> /tmp/expense.log
+heading adding user
+id expense
+if [ $? -ne 0 ]; then
+useradd expnese &>> /tmp/expense.log
+fi
 status $?
 
 heading copying service file
