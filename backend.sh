@@ -51,8 +51,11 @@ heading unzip content
 unzip /tmp/backend.zip &>> /tmp/expense.log
 status $?
 
-heading installing node package nd mysql
+heading installing node package
 npm install &>> /tmp/expense.log
+status $?
+
+heading installing mysql
 dnf install mysql -y  &>> /tmp/expense.log
 status $?
 
