@@ -52,7 +52,7 @@ unzip /tmp/backend.zip &>> /tmp/expense.log
 status $?
 
 heading installing mysql
-#npm install
+npm install
 dnf install mysql -y  &>> /tmp/expense.log
 status $?
 
